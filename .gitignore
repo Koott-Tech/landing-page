@@ -19,24 +19,6 @@ yarn-error.log*
 # local
 *.local
 
-# editor
-.vscode/
-.idea/
-*.sublime-workspace
-*.sublime-project
 
-# OS
-Thumbs.db
-Desktop.ini
 
-# test coverage
-coverage/
 
-# media cache
-*.mp4
-*.avi
-*.mov
-*.mkv
-
-# others
-*.swp
