@@ -1,9 +1,34 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import { gsap } from "gsap";
 
 const TypesOfTherapy = () => {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const sectionRef = useRef(null);
+
+  // Refs for chat bubbles
+  const bubbleRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
+
+  useEffect(() => {
+    let tl;
+    function playSequence() {
+      tl = gsap.timeline({ defaults: { duration: 0.7, ease: "power2.out" }, onComplete: () => {
+        gsap.to(bubbleRefs.map(r => r.current), { opacity: 0, y: 30, stagger: 0.1, duration: 0.4, onComplete: () => {
+          setTimeout(playSequence, 1200); // delay before repeating
+        }});
+      }});
+      bubbleRefs.forEach((ref, i) => {
+        tl.fromTo(
+          ref.current,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0 },
+          i === 0 ? 0 : "+=0.15"
+        );
+      });
+    }
+    playSequence();
+    return () => tl && tl.kill();
+  }, []);
 
   return (
     <section
@@ -40,7 +65,7 @@ const TypesOfTherapy = () => {
             minWidth: 1100,
             background: "#f5faff", // lighter blue
             borderRadius: 40,
-            height: 550,
+            height: 620,
             margin: "1rem",
             boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
             position: "relative",
@@ -54,7 +79,7 @@ const TypesOfTherapy = () => {
             style={{
               position: "absolute",
               top: 40,
-              left: 32,
+              left: 72,
               background: "#e0e7ef",
               color: "#222",
               borderRadius: 20,
@@ -128,7 +153,7 @@ const TypesOfTherapy = () => {
                 <div style={{ fontWeight: 700, color: "#222", fontSize: 16 }}>Dr. Irene Cheriyan</div>
               </div>
               {/* Patient message */}
-              <div className="bubble-anim-1" style={{ display: "flex", alignItems: "flex-end", gap: 8, justifyContent: "flex-end" }}>
+              <div ref={bubbleRefs[0]} style={{ display: "flex", alignItems: "flex-end", gap: 8, justifyContent: "flex-end", opacity: 0 }}>
                 <div
                   style={{
                     background: "#e3f0ff",
@@ -149,7 +174,7 @@ const TypesOfTherapy = () => {
                 />
               </div>
               {/* Doctor message */}
-              <div className="bubble-anim-2" style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
+              <div ref={bubbleRefs[1]} style={{ display: "flex", alignItems: "flex-end", gap: 8, opacity: 0 }}>
                 <img
                   src={process.env.PUBLIC_URL + "/irene.jpeg"}
                   alt="Doctor"
@@ -170,7 +195,7 @@ const TypesOfTherapy = () => {
                 </div>
               </div>
               {/* Patient message */}
-              <div className="bubble-anim-3" style={{ display: "flex", alignItems: "flex-end", gap: 8, justifyContent: "flex-end" }}>
+              <div ref={bubbleRefs[2]} style={{ display: "flex", alignItems: "flex-end", gap: 8, justifyContent: "flex-end", opacity: 0 }}>
                 <div
                   style={{
                     background: "#e3f0ff",
@@ -191,7 +216,7 @@ const TypesOfTherapy = () => {
                 />
               </div>
               {/* Doctor voice message with animation */}
-              <div className="bubble-anim-4" style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
+              <div ref={bubbleRefs[3]} style={{ display: "flex", alignItems: "flex-end", gap: 8, opacity: 0 }}>
                 <img
                   src={process.env.PUBLIC_URL + "/irene.jpeg"}
                   alt="Doctor"
@@ -228,7 +253,7 @@ const TypesOfTherapy = () => {
                 </div>
               </div>
               {/* User emoji sticker message with animation */}
-              <div className="bubble-anim-5" style={{ display: "flex", alignItems: "flex-end", gap: 8, justifyContent: "flex-end" }}>
+              <div ref={bubbleRefs[4]} style={{ display: "flex", alignItems: "flex-end", gap: 8, justifyContent: "flex-end", opacity: 0 }}>
                 <div
                   style={{
                     background: "#e3f0ff",
@@ -252,6 +277,65 @@ const TypesOfTherapy = () => {
               </div>
             </div>
           </div>
+          {/* Get Started Button for Chat Therapy */}
+          <div style={{ position: "absolute", bottom: 28, left: 72, zIndex: 3 }}>
+            <style>{`
+              .therapy-getstarted-btn {
+                position: relative;
+                overflow: hidden;
+                padding: 0.85rem 2.2rem 0.85rem 1.6rem;
+                border-radius: 2rem;
+                border: none;
+                background: #fff;
+                color: #27ae60;
+                font-weight: 700;
+                font-size: 1.1rem;
+                cursor: pointer;
+                box-shadow: 0 6px 24px rgba(0,0,0,0.18), 0 2px 12px rgba(0,0,0,0.12);
+                transition: color 0.2s, border 0.2s;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+              }
+              .therapy-getstarted-btn::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -100%;
+                width: 100%;
+                height: 100%;
+                background: #27ae60;
+                z-index: 0;
+                transition: bottom 0.4s cubic-bezier(.4,2,.6,1), opacity 0.2s;
+                opacity: 0.95;
+              }
+              .therapy-getstarted-btn:hover::before {
+                bottom: 0;
+              }
+              .therapy-getstarted-btn:hover {
+                color: #fff;
+                border: none;
+              }
+              .therapy-getstarted-btn span {
+                position: relative;
+                z-index: 1;
+              }
+              .therapy-getstarted-btn svg {
+                position: relative;
+                z-index: 1;
+                margin-left: 0.2rem;
+                transition: transform 0.2s;
+              }
+              .therapy-getstarted-btn:hover svg {
+                transform: translateX(6px);
+              }
+            `}</style>
+            <button className="therapy-getstarted-btn" onClick={() => window.location.href = 'https://mind-connect-therapy-hub.lovable.app'}>
+              <span>Get Started</span>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </button>
+          </div>
         </div>
         {/* Right Card */}
         <div
@@ -261,7 +345,7 @@ const TypesOfTherapy = () => {
             minWidth: 1100,
             background: "#f5faff", // lighter blue
             borderRadius: 40,
-            height: 550,
+            height: 620,
             margin: "1rem",
             boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
             position: "relative",
@@ -356,7 +440,7 @@ const TypesOfTherapy = () => {
               style={{
                 position: "absolute",
                 top: 40,
-                left: 32,
+                left: 72,
                 background: "#e0e7ef",
                 color: "#222",
                 borderRadius: 20,
@@ -375,6 +459,13 @@ const TypesOfTherapy = () => {
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="7" width="13" height="10" rx="2" stroke="#27ae60" strokeWidth="2"/><path d="M21 9.5v5l-4-2.5 4-2.5Z" stroke="#27ae60" strokeWidth="2" strokeLinejoin="round"/></svg>
               Video Sessions
             </div>
+          </div>
+          {/* Get Started Button for Video Sessions */}
+          <div style={{ position: "absolute", bottom: 28, right: 72, zIndex: 3 }}>
+            <button className="therapy-getstarted-btn" onClick={() => window.location.href = 'https://mind-connect-therapy-hub.lovable.app'}>
+              <span>Get Started</span>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </button>
           </div>
         </div>
       </div>

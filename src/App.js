@@ -7,15 +7,28 @@ import HeroSection from "./components/HeroSection";
 import Text from "./components/Text";
 import TypesOfTherapy from "./components/TypesOfTherapy";
 import PickYourGuide from "./components/PickYourGuide";
+import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Guide from "./components/Guide";
 
 function App() {
   return (
-    <>
-      <HeroSection />
-      <Text />
-      <TypesOfTherapy />
-      <PickYourGuide />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <HeroSection />
+            <Text />
+            <TypesOfTherapy />
+            <PickYourGuide />
+            <FAQ />
+            <Footer />
+          </>
+        } />
+        <Route path="/guide" element={<Guide />} />
+      </Routes>
+    </Router>
   );
 }
 

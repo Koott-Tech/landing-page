@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import Navbar from "./Navbar";
 import { gsap } from "gsap";
+import OnboardingModal from './OnboardingModal';
+import { useNavigate } from 'react-router-dom';
+import { createPortal } from 'react-dom';
 
 const HeroSection = () => {
   const heroRef = useRef(null);
@@ -8,6 +11,8 @@ const HeroSection = () => {
   const navbarRef = useRef(null);
   const loginBtnRef = useRef(null);
   const getStartedBtnRef = useRef(null);
+  const [showOnboarding, setShowOnboarding] = React.useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Prevent horizontal scroll on body
@@ -183,10 +188,10 @@ const HeroSection = () => {
       {/* Login and Get Started buttons at right */}
       <div
         style={{
-          position: "absolute",
-          top: "3rem",
-          right: "3rem",
-          zIndex: 2,
+          position: "fixed",
+          top: "2.2rem",
+          right: "2.2rem",
+          zIndex: 100,
           display: "flex",
           gap: "1rem",
         }}
@@ -272,10 +277,10 @@ const HeroSection = () => {
             z-index: 1;
           }
         `}</style>
-        <button ref={loginBtnRef} className="cureminds-btn">
+        <button ref={loginBtnRef} className="cureminds-btn" onClick={() => window.location.href = 'https://mind-connect-therapy-hub.lovable.app'}>
           <span>Login</span>
         </button>
-        <button ref={getStartedBtnRef} className="getstarted-btn">
+        <button ref={getStartedBtnRef} className="getstarted-btn" onClick={() => window.location.href = 'https://mind-connect-therapy-hub.lovable.app'}>
           <span>Get Started</span>
         </button>
       </div>
@@ -350,9 +355,13 @@ const HeroSection = () => {
             z-index: 1;
           }
         `}</style>
-        <button className="find-therapist-btn" style={{ display: "block", margin: "0 auto" }}>
+        <button className="find-therapist-btn" style={{ display: "block", margin: "0 auto" }} onClick={() => setShowOnboarding(true)}>
           <span>Find My Therapist</span>
         </button>
+        {createPortal(
+          <OnboardingModal open={showOnboarding} onClose={() => setShowOnboarding(false)} onComplete={() => { setShowOnboarding(false); navigate('/guide'); }} />,
+          document.body
+        )}
       </div>
     </div>
   );
