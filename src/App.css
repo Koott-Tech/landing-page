@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes chatBubbleFade {
+  0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+  8% { opacity: 1; transform: translateY(0) scale(1); }
+  20% { opacity: 1; transform: translateY(0) scale(1); }
+  28% { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  100% { opacity: 0; transform: translateY(-10px) scale(0.98); }
+}
+.bubble-anim-1 { animation: chatBubbleFade 15s linear infinite; animation-delay: 0s; }
+.bubble-anim-2 { animation: chatBubbleFade 15s linear infinite; animation-delay: 3s; }
+.bubble-anim-3 { animation: chatBubbleFade 15s linear infinite; animation-delay: 6s; }
+.bubble-anim-4 { animation: chatBubbleFade 15s linear infinite; animation-delay: 9s; }
+.bubble-anim-5 { animation: chatBubbleFade 15s linear infinite; animation-delay: 12s; }
