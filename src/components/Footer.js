@@ -36,7 +36,7 @@ export default function Footer() {
           <h3 style={{ color: "#27ae60", fontWeight: 800, fontSize: 22, marginBottom: 18 }}>Languages of India</h3>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexWrap: "wrap", gap: 10 }}>
             {LANGUAGES.map(lang => (
-              <li key={lang} style={{ background: "#222", borderRadius: 16, padding: "6px 16px", fontSize: 15, marginBottom: 6 }}>{lang}</li>
+              <li key={lang} style={{ background: "#222", borderRadius: 10, padding: "6px 16px", fontSize: 15, marginBottom: 6 }}>{lang}</li>
             ))}
           </ul>
         </div>
@@ -44,7 +44,7 @@ export default function Footer() {
           <h3 style={{ color: "#27ae60", fontWeight: 800, fontSize: 22, marginBottom: 18 }}>Types of Therapies</h3>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexWrap: "wrap", gap: 10 }}>
             {THERAPIES.map(therapy => (
-              <li key={therapy} style={{ background: "#222", borderRadius: 16, padding: "6px 16px", fontSize: 15, marginBottom: 6 }}>{therapy}</li>
+              <li key={therapy} style={{ background: "#222", borderRadius: 10, padding: "6px 16px", fontSize: 15, marginBottom: 6 }}>{therapy}</li>
             ))}
           </ul>
         </div>

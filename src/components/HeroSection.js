@@ -80,7 +80,8 @@ const HeroSection = () => {
         background: "#fff", // fallback background for when width shrinks
         display: "block",
         margin: "0 auto",
-        borderRadius: 18,
+        borderBottomLeftRadius: "18px",
+        borderBottomRightRadius: "18px",
       }}
     >
       <video
@@ -126,7 +127,7 @@ const HeroSection = () => {
               position: relative;
               overflow: hidden;
               padding: 1.25rem 2.4rem;
-              border-radius: 2rem;
+              border-radius: 15px;
               border: none;
               background: #fff;
               color: #1a237e;
@@ -201,7 +202,7 @@ const HeroSection = () => {
             position: relative;
             overflow: hidden;
             padding: 0.75rem 2rem;
-            border-radius: 2rem;
+            border-radius: 15px;
             border: none;
             background: rgba(255,255,255,0.25);
             color: #222;
@@ -242,7 +243,7 @@ const HeroSection = () => {
             position: relative;
             overflow: hidden;
             padding: 0.75rem 2rem;
-            border-radius: 2rem;
+            border-radius: 15px;
             border: none;
             background: #27ae60;
             color: #fff;
@@ -320,7 +321,7 @@ const HeroSection = () => {
             position: relative;
             overflow: hidden;
             padding: 0.85rem 2.2rem;
-            border-radius: 2rem;
+            border-radius: 15px;
             border: none;
             background: #27ae60;
             color: #fff;

@@ -90,7 +90,7 @@ const Guide = () => {
             position: relative;
             overflow: hidden;
             padding: 0.85rem 2.2rem;
-            border-radius: 2rem;
+            border-radius: 15px;
             border: none;
             background: #27ae60;
             color: #fff;
@@ -357,7 +357,7 @@ const Guide = () => {
                 <h2 style={{ fontSize: 36, fontWeight: 700, marginBottom: 0 }}>{DOCTORS[selected].name}</h2>
                 <div style={{ display: "flex", gap: 16, marginBottom: 0 }}>
                   {DOCTORS[selected].expertise.map((exp, i) => (
-                    <span key={i} style={{ background: "rgba(39,174,96,0.12)", color: "#27ae60", borderRadius: 16, padding: "6px 16px", fontWeight: 600, fontSize: 16 }}>{exp}</span>
+                    <span key={i} style={{ background: "rgba(39,174,96,0.12)", color: "#27ae60", borderRadius: 10, padding: "6px 16px", fontWeight: 600, fontSize: 16 }}>{exp}</span>
                   ))}
                 </div>
                 <div style={{ fontSize: 18, color: "#222" }}><b>Experience:</b> {DOCTORS[selected].experience} years</div>

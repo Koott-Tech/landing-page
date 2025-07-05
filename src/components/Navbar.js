@@ -11,7 +11,7 @@ const Navbar = () => (
       display: "flex",
       gap: "2rem",
       background: "rgba(255,255,255,0.25)",
-      borderRadius: "2rem",
+              borderRadius: "15px",
       padding: "0.75rem 2rem",
       boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
       backdropFilter: "blur(12px)",

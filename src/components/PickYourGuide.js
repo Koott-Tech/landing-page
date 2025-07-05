@@ -48,7 +48,7 @@ const PickYourGuide = () => {
             position: relative;
             overflow: hidden;
             padding: 0.85rem 2.2rem;
-            border-radius: 2rem;
+            border-radius: 15px;
             border: none;
             background: #fff;
             color: #27ae60;
@@ -107,7 +107,7 @@ const PickYourGuide = () => {
             z-index: 1;
             width: 200px;
             height: 300px;
-            border-radius: 24px;
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
             background: #fff;
@@ -147,7 +147,7 @@ const PickYourGuide = () => {
             position: relative;
             overflow: hidden;
             padding: 0.85rem 2.2rem;
-            border-radius: 2rem;
+            border-radius: 15px;
             border: none;
             background: #27ae60;
             color: #fff;

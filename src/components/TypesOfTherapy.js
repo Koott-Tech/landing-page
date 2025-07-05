@@ -35,7 +35,7 @@ const TypesOfTherapy = () => {
       ref={sectionRef}
       style={{
         width: "100%",
-        minHeight: "200vh",
+        minHeight: "100vh",
         background: "#fff",
         display: "flex",
         flexDirection: "column",
@@ -46,27 +46,27 @@ const TypesOfTherapy = () => {
         zIndex: 1
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "2.5rem",
-          width: "90vw",
-          maxWidth: 1600,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+              <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "1.5rem",
+            width: "95vw",
+            maxWidth: 1400,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
         {/* Left Card */}
         <div
           ref={leftRef}
           style={{
-            width: 1100,
-            minWidth: 1100,
+            width: 650,
+            minWidth: 650,
             background: "#f5faff", // lighter blue
-            borderRadius: 40,
-            height: 620,
-            margin: "1rem",
+            borderRadius: 30,
+            height: 480,
+            margin: "0.5rem",
             boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
             position: "relative",
             display: "flex",
@@ -78,19 +78,19 @@ const TypesOfTherapy = () => {
           <div
             style={{
               position: "absolute",
-              top: 40,
-              left: 72,
+              top: 30,
+              left: 40,
               background: "#e0e7ef",
               color: "#222",
-              borderRadius: 20,
-              padding: "0.5rem 1.25rem",
+              borderRadius: 16,
+              padding: "0.4rem 1rem",
               fontWeight: 600,
-              fontSize: "1.1rem",
+              fontSize: "0.9rem",
               boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
               letterSpacing: "0.01em",
               display: "flex",
               alignItems: "center",
-              gap: "0.5rem",
+              gap: "0.4rem",
               zIndex: 2
             }}
           >
@@ -101,17 +101,17 @@ const TypesOfTherapy = () => {
           <div style={{ display: "flex", flex: 1, alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%" }}>
             <h2
               style={{
-                marginTop: 120,
-                marginLeft: 64,
-                paddingLeft: 12,
+                marginTop: 80,
+                marginLeft: 40,
+                paddingLeft: 8,
                 marginRight: 2,
                 color: "#1a1a1a",
                 fontWeight: 700,
-                fontSize: "2.1rem",
+                fontSize: "1.6rem",
                 textAlign: "left",
                 lineHeight: 1.3,
                 flex: 1,
-                maxWidth: 350
+                maxWidth: 250
               }}
             >
               Real-time, supportive chat with expert therapists—anytime, anywhere.
@@ -119,18 +119,18 @@ const TypesOfTherapy = () => {
             {/* Chat interface layout */}
             <div
               style={{
-                width: 260,
-                minWidth: 220,
-                minHeight: 400,
-                marginRight: 160,
-                paddingRight: 12,
+                width: 200,
+                minWidth: 180,
+                minHeight: 320,
+                marginRight: 100,
+                paddingRight: 8,
                 background: "#fff",
-                borderRadius: 16,
+                borderRadius: 12,
                 boxShadow: "0 6px 24px rgba(39,174,96,0.10), 0 2px 12px rgba(0,0,0,0.08)",
-                padding: 16,
+                padding: 12,
                 display: "flex",
                 flexDirection: "column",
-                gap: 12,
+                gap: 8,
                 position: "relative",
                 transition: "transform 0.2s, box-shadow 0.2s",
                 cursor: "pointer"
@@ -158,7 +158,7 @@ const TypesOfTherapy = () => {
                   style={{
                     background: "#e3f0ff",
                     color: "#222",
-                    borderRadius: "16px 16px 4px 16px",
+                    borderRadius: "10px 10px 4px 10px",
                     padding: "5px 10px",
                     fontSize: 12,
                     maxWidth: 120,
@@ -184,7 +184,7 @@ const TypesOfTherapy = () => {
                   style={{
                     background: "#27ae60",
                     color: "#fff",
-                    borderRadius: "16px 16px 16px 4px",
+                    borderRadius: "10px 10px 10px 4px",
                     padding: "5px 10px",
                     fontSize: 12,
                     maxWidth: 120,
@@ -200,7 +200,7 @@ const TypesOfTherapy = () => {
                   style={{
                     background: "#e3f0ff",
                     color: "#222",
-                    borderRadius: "16px 16px 4px 16px",
+                    borderRadius: "10px 10px 4px 10px",
                     padding: "5px 10px",
                     fontSize: 12,
                     maxWidth: 120,
@@ -226,7 +226,7 @@ const TypesOfTherapy = () => {
                   style={{
                     background: "#27ae60",
                     color: "#fff",
-                    borderRadius: "16px 16px 16px 4px",
+                    borderRadius: "10px 10px 10px 4px",
                     padding: "5px 10px",
                     fontSize: 12,
                     maxWidth: 120,
@@ -257,7 +257,7 @@ const TypesOfTherapy = () => {
                 <div
                   style={{
                     background: "#e3f0ff",
-                    borderRadius: "16px 16px 4px 16px",
+                    borderRadius: "10px 10px 4px 10px",
                     padding: "5px 10px",
                     fontSize: 22,
                     maxWidth: 60,
@@ -278,18 +278,18 @@ const TypesOfTherapy = () => {
             </div>
           </div>
           {/* Get Started Button for Chat Therapy */}
-          <div style={{ position: "absolute", bottom: 28, left: 72, zIndex: 3 }}>
+          <div style={{ position: "absolute", bottom: 20, left: 40, zIndex: 3 }}>
             <style>{`
               .therapy-getstarted-btn {
                 position: relative;
                 overflow: hidden;
-                padding: 0.85rem 2.2rem 0.85rem 1.6rem;
-                border-radius: 2rem;
+                padding: 0.7rem 1.8rem 0.7rem 1.3rem;
+                border-radius: 15px;
                 border: none;
                 background: #fff;
                 color: #27ae60;
                 font-weight: 700;
-                font-size: 1.1rem;
+                font-size: 0.9rem;
                 cursor: pointer;
                 box-shadow: 0 6px 24px rgba(0,0,0,0.18), 0 2px 12px rgba(0,0,0,0.12);
                 transition: color 0.2s, border 0.2s;
@@ -341,12 +341,12 @@ const TypesOfTherapy = () => {
         <div
           ref={rightRef}
           style={{
-            width: 1100,
-            minWidth: 1100,
+            width: 650,
+            minWidth: 650,
             background: "#f5faff", // lighter blue
-            borderRadius: 40,
-            height: 620,
-            margin: "1rem",
+            borderRadius: 30,
+            height: 480,
+            margin: "0.5rem",
             boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
             position: "relative",
           }}
@@ -357,13 +357,13 @@ const TypesOfTherapy = () => {
               <div
                 style={{
                   width: "100%",
-                  marginTop: 104,
+                  marginTop: 70,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "flex-start",
                   position: "relative",
-                  height: 180,
-                  marginLeft: 40
+                  height: 140,
+                  marginLeft: 25
                 }}
               >
                 <style>{`
@@ -378,30 +378,28 @@ const TypesOfTherapy = () => {
                     box-shadow: 0 12px 36px rgba(39,174,96,0.22), 0 4px 16px rgba(0,0,0,0.12) !important;
                   }
                 `}</style>
-                {[1, 2, 3].map((num, idx) => {
+                {[1, 2].map((num, idx) => {
                   // Center card effect
-                  const isCenter = idx === 1;
-                  // Tilt angles for playing card effect
-                  const angles = [-15, 0, 15];
+                  const isCenter = idx === 0;
                   return (
                     <div
                       key={num}
                       className="therapy-card"
                       style={{
-                        marginLeft: idx === 0 ? 0 : 20,
-                        zIndex: isCenter ? 10 : 3 - idx,
-                        width: isCenter ? 140 : 120,
-                        height: isCenter ? 220 : 180,
-                        borderRadius: 20,
+                        marginLeft: idx === 0 ? 0 : -40,
+                        marginTop: idx === 0 ? -75 : 75,
+                        zIndex: isCenter ? 10 : 2,
+                        width: 180,
+                        height: 120,
+                        borderRadius: 15,
                         overflow: "hidden",
                         boxShadow: isCenter
                           ? "0 8px 32px rgba(39,174,96,0.18), 0 2px 8px rgba(0,0,0,0.10)"
                           : "0 4px 16px rgba(0,0,0,0.10)",
                         background: "#fff",
-                        border: "2px solid #e0e7ef",
                         transition: "transform 0.2s, box-shadow 0.2s, width 0.2s, height 0.2s",
                         position: "relative",
-                        transform: `rotate(${angles[idx]}deg)` + (isCenter ? " translateY(-24px) scale(1.08)" : ""),
+                        transform: isCenter ? "translateY(-12px) scale(1.05)" : "",
                       }}
                     >
                       <video
@@ -418,40 +416,40 @@ const TypesOfTherapy = () => {
               </div>
             </div>
             {/* Text section on the right */}
-            <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "flex-end", justifyContent: "center", height: "100%", paddingRight: 64 }}>
+            <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "flex-end", justifyContent: "center", height: "100%", paddingRight: 40 }}>
               <h2
                 style={{
-                  marginTop: 120,
-                  paddingLeft: 32,
+                  marginTop: 80,
+                  paddingLeft: 20,
                   paddingRight: 0,
                   color: "#1a1a1a",
                   fontWeight: 700,
-                  fontSize: "2.1rem",
+                  fontSize: "1.6rem",
                   textAlign: "left",
                   lineHeight: 1.3,
-                  maxWidth: 400
+                  maxWidth: 250
                 }}
               >
-                Connect face-to-face with licensed therapists in secure, private video sessions—personalized for your needs, from the comfort of your space.
+                Connect face-to-face with licensed therapists in secure video sessions.
               </h2>
             </div>
             {/* Video Sessions bubble on the left, above the cards */}
             <div
               style={{
                 position: "absolute",
-                top: 40,
-                left: 72,
+                top: 30,
+                left: 40,
                 background: "#e0e7ef",
                 color: "#222",
-                borderRadius: 20,
-                padding: "0.5rem 1.25rem",
+                borderRadius: 16,
+                padding: "0.4rem 1rem",
                 fontWeight: 600,
-                fontSize: "1.1rem",
+                fontSize: "0.9rem",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
                 letterSpacing: "0.01em",
                 display: "flex",
                 alignItems: "center",
-                gap: "0.5rem",
+                gap: "0.4rem",
                 zIndex: 2
               }}
             >
@@ -461,7 +459,7 @@ const TypesOfTherapy = () => {
             </div>
           </div>
           {/* Get Started Button for Video Sessions */}
-          <div style={{ position: "absolute", bottom: 28, right: 72, zIndex: 3 }}>
+          <div style={{ position: "absolute", bottom: 20, left: 40, zIndex: 3 }}>
             <button className="therapy-getstarted-btn" onClick={() => window.location.href = 'https://mind-connect-therapy-hub.lovable.app'}>
               <span>Get Started</span>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
